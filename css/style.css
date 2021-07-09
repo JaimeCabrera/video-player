@@ -1,0 +1,117 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  background-color: #34495E;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Buttons */
+.button{
+  inline-size: 32px;
+  block-size: 32px;
+  border: none;
+  background-color: transparent; 
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  padding: 20px 30px;
+  /* puede ser unset initial */
+  }
+  /* pseudo cclase */
+  .button:active{
+    transform: scale(.9);
+    background-color: #34495E;
+  }
+
+  
+
+  .player-progress{
+    background-color: rgba(49, 49, 49, 0.411);
+  }
+  .player-progress:hover input{
+    cursor: pointer;
+  }
+
+  #play{
+    background-image: url('../images/play.svg');
+    background-color: rgba(8, 8, 8, 0.699);
+    border-radius: 5px;
+    transition:ease .5s;
+    
+  }
+  #play:hover{
+    background-color: rgba(14, 65, 206, 0.514);
+  }
+ 
+  #pause{
+    background-image: url('../images/pause.svg');
+    background-color: rgba(3, 3, 3, 0.733);
+    border-radius: 5px;
+    transition:ease .5s;
+  }
+  #pause:hover{
+    background-color: rgba(180, 180, 180, 0.534);
+
+  }
+  #backward{
+    background-image: url('../images/-10.svg');
+  }
+  #forward{
+    background-image: url('../images/+10.svg');
+  }
+  /* video */
+  .wrapper{
+    max-inline-size: 900px;
+    /* centrar en horizontal */
+    margin: auto;
+    justify-items: center;
+
+  }
+ .player{
+   margin-block-start: 10px;
+   position: relative;
+   display: flex;
+ }
+  .player video{
+    inline-size: 100%;
+    aspect-ratio: 16/9;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+  /* style  repoductor */
+  .player-title{
+    color: white;
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-start: 20px;
+  }
+.player-actions{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap:20px ;
+  justify-content: center;
+  align-items: center;
+}
+.player-progress{
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  display: flex;
+}
+.player-progress input {
+  flex: 1;
+  padding: 15px;
+}
+.player-overlay{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: .5s opacity;
+}
+.player:hover .player-overlay {
+  opacity: 1;
+}
